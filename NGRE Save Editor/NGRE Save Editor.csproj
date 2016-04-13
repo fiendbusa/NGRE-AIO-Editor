@@ -35,6 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NAudio, Version=1.7.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.7.3\lib\net35\NAudio.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -57,6 +61,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Codes\HexCodes.cs" />
+    <Compile Include="Codes\OffsetCodes.cs" />
+    <Compile Include="Converters\WeaponImageConverter.cs" />
+    <Compile Include="MiscModsMainWindow.xaml.cs">
+      <DependentUpon>MiscModsMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MiscMods\Weapons.cs" />
+    <Compile Include="MiscMods\WeaponsProperty.cs" />
     <Compile Include="Save Files\SaveFile.cs" />
     <Compile Include="Save Files\SaveType.cs" />
     <Page Include="MainWindow.xaml">
@@ -71,6 +83,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MiscModsMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -90,6 +106,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -104,6 +121,41 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Main_Mod_Other_Selection.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Sound_Ryu_Hurt.mp3" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\Misc_Mod_Background.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_BOTA.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_CLAWS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_DS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\img_KG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\IMG_SCYTHE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\img_BOTA.PNG" />
+    <Resource Include="Images\img_CLAWS.png" />
+    <Resource Include="Images\img_DS.png" />
+    <Resource Include="Images\img_KG.png" />
+    <Resource Include="Images\img_SCYTHE.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\img_LUNAR.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\img_SELECTIONBAR.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,40 @@
+﻿<Window x:Class="NGRE_Save_Editor.MiscModsMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NGRE_Save_Editor"
+        mc:Ignorable="d"
+        Title="Miscellaneous Mods" Height="359.339" Width="766.409" ResizeMode="NoResize"  WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Window.Resources>
+        <local:WeaponImageConverter x:Key="WeaponImageConverter"/>
+    </Window.Resources>
+    <Grid>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="332" VerticalAlignment="Top" Width="763">
+            <TabItem Header="Weapons">
+                <Grid Background="#FFE5E5E5">
+                    <Image x:Name="imgBackground" HorizontalAlignment="Left" Height="304" VerticalAlignment="Top" Width="757" Source="Resources/Misc_Mod_Background.png" Stretch="Fill"/>
+                    <Grid HorizontalAlignment="Left" Height="304" VerticalAlignment="Top" Width="757">
+                        <Image x:Name="imgWeapon" HorizontalAlignment="Left" Height="118" Margin="221,62,0,0" VerticalAlignment="Top" Width="311" Source="{Binding ImgSource, Mode=OneWay, Converter={StaticResource WeaponImageConverter}}" Stretch="Fill" />
+                        <Button x:Name="btnNext" Content="Next" Foreground="White" HorizontalAlignment="Left" Background="Black" Margin="417,214,0,0" VerticalAlignment="Top" Width="75" Click="btnNext_Click"/>
+                        <Image x:Name="imgSelectionBar" HorizontalAlignment="Left" Height="24" Margin="221,185,0,0" VerticalAlignment="Top" Width="311" Source="Images/img_SELECTIONBAR.png"/>
+                        <Label x:Name="lblWeaponName" Content="{Binding CurrentWepSelected, Mode=OneWay}" Foreground="White" HorizontalContentAlignment="Center" Margin="258,185,252,0" VerticalAlignment="Top" FontWeight="Bold"/>
+                        <Label x:Name="lblHex" Content="{Binding TestHex, Mode=OneWay}" Foreground="White" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                        <Label x:Name="lblOffset" Content="{Binding TestOffset, Mode=OneWay}" Foreground="White" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top"/>
+                        <RadioButton x:Name="radioLvl1" Content="Level 1" Foreground="White" HorizontalAlignment="Left" Margin="591,123,0,0" VerticalAlignment="Top"/>
+                        <RadioButton x:Name="radioLvl3" Content="Level 3" Foreground="White" HorizontalAlignment="Left" Margin="591,138,0,0" VerticalAlignment="Top"/>
+                        <GroupBox x:Name="grpbxWepLevel" Header="Set Level" Foreground="White" HorizontalAlignment="Left" Margin="580,103,0,0" VerticalAlignment="Top" Height="65" Width="89"/>
+                        <Button x:Name="btnApply" Content="Apply" Foreground="White" HorizontalAlignment="Left" Background="Black" Margin="245,214,0,0" VerticalAlignment="Top" Width="75" Click="btnApply_Click"/>
+
+
+                    </Grid>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="TabItem">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

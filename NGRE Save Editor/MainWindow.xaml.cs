@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using NGRE_Save_Editor.Save_Files;
 using NGRE_Save_Editor.Save_File;
+using NGRE_Save_Editor.Codes;
+using System.Linq;
+
 
 namespace NGRE_Save_Editor
 {
@@ -22,9 +16,13 @@ namespace NGRE_Save_Editor
     /// </summary>
     public partial class MainWindow : Window
     {
+        //Set reference to mainwindow so other windows can access it.
+        public Window MainWindowReference { get; private set; }
+
         public MainWindow()
         {
             InitializeComponent();
+            MainWindowReference = this;
         }
 
 
@@ -33,14 +31,18 @@ namespace NGRE_Save_Editor
          */
         private void gridAyaneSide_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (String.IsNullOrEmpty(SaveFile.ChapterSave) && String.IsNullOrEmpty(SaveFile.StorySave)) return;
+            
+            border.BorderBrush = System.Windows.Media.Brushes.Purple;
+            if (String.IsNullOrEmpty(SaveFile.SystemSave) && String.IsNullOrEmpty(SaveFile.ChapterSave)) return;
             var uriSource = new Uri(@"/Resources/Main_Mod_Other_Selection.png", UriKind.Relative);
             imgMainSelection.Source = new BitmapImage(uriSource);
         }
 
         private void gridRyuSide_MouseEnter(object sender, MouseEventArgs e)
         {
-            if (String.IsNullOrEmpty(SaveFile.SystemSave)) return;
+            
+            border.BorderBrush = System.Windows.Media.Brushes.Red;
+            if (String.IsNullOrEmpty(SaveFile.StorySave)) return;
             var uriSource = new Uri(@"/Resources/Main_Mod_Story_Selection.png", UriKind.Relative);
             imgMainSelection.Source = new BitmapImage(uriSource);
         }
@@ -69,8 +71,10 @@ namespace NGRE_Save_Editor
 
         private void lblMinimize_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            SaveFile.savePath(Save.System);
-            Application.Current.MainWindow.WindowState = WindowState.Minimized;
+            //Application.Current.MainWindow.WindowState = WindowState.Minimized;
+            //SaveFile.writeHex(Save.System, OffsetCodes.unknownNinjaLevel, HexCodes.level98);
+           
+            //int[] myIntArray = Enumerable.Repeat(1234, 1000).ToArray();
         }
 
         private void lblSystemSave_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -81,7 +85,7 @@ namespace NGRE_Save_Editor
         private void lblStorySave_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             SaveFile.savePath(Save.Story);
-            SaveFile.writeHex(Save.Story, new long[] {0x0,0x1,0x2,0x3 }, new byte[] { 0xA4, 0xA4});
+            
         }
 
         private void lblChapSave_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -89,9 +93,23 @@ namespace NGRE_Save_Editor
             SaveFile.savePath(Save.Chapter);
             
         }
+
+        private void lblOtherMods_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            //if (String.IsNullOrEmpty(SaveFile.SystemSave)) MessageBox.Show("System Save path not selected. Click System Save on the bottom right to point towards your save file.", "Save Error", MessageBoxButton.OK, MessageBoxImage.Error);  return;
+            MiscModsMainWindow miscModsWindow = new MiscModsMainWindow();
+            miscModsWindow.mainWindowRef = MainWindowReference;
+            this.Hide();
+            miscModsWindow.Show();
+        }
+
+        private void lblStoryMods_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if(String.IsNullOrEmpty(SaveFile.StorySave)) MessageBox.Show("Story save path not selected. Click Story Save on the bottom right to point towards your save file.", "Save Error", MessageBoxButton.OK); return;
+        }
         /*UI Logic
-        * Ends
-        */
+* Ends
+*/
     }
 }
         

@@ -9,19 +9,25 @@
     <Grid>
         <Grid HorizontalAlignment="Left" Height="361" VerticalAlignment="Top" Width="770" Margin="0,0,-1,0">
             <Image x:Name="imgMainSelection" HorizontalAlignment="Left" Height="362" VerticalAlignment="Top" Width="770" Source="Resources/Main_Mod_Story_Selection.png"/>
+            
+            <!-- Ayane Side Start -->
             <Grid Name="gridAyaneSide" Background="Transparent" HorizontalAlignment="Left" Height="362" VerticalAlignment="Top" Width="366" Margin="0,0,0,-1" MouseEnter="gridAyaneSide_MouseEnter">
-                <Label x:Name="lblOtherMods" Content="Misc" Foreground="Purple" HorizontalAlignment="Left" Margin="121,199,0,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Consolas"/>
+                <Label x:Name="lblOtherMods" Content="Misc" Foreground="Purple" HorizontalAlignment="Left" Margin="121,199,0,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Consolas" MouseLeftButtonDown="lblOtherMods_MouseLeftButtonDown"/>
                 <Label x:Name="lblChapSave" Content="Chapter Save" Foreground="Red" HorizontalAlignment="Left" Margin="5,326,0,0" VerticalAlignment="Top" MouseLeftButtonDown="lblChapSave_MouseLeftButtonDown"/>
-                <Label x:Name="lblStorySave" Content="Story Save" Foreground="Red" HorizontalAlignment="Left" Margin="90,326,0,0" VerticalAlignment="Top" MouseLeftButtonDown="lblStorySave_MouseLeftButtonDown"/>
-
-            </Grid>
+                <Label x:Name="lblSystemSave" Content="System Save" Foreground="Red" HorizontalAlignment="Left" Margin="90,326,0,0" VerticalAlignment="Top" MouseLeftButtonDown="lblSystemSave_MouseLeftButtonDown"/>
+               </Grid>
+            <!-- Ayane Side End -->
+            
+            <!-- Ryu Hayabusa Side -->
             <Grid Name="gridRyuSide" Background="Transparent" HorizontalAlignment="Left" Height="362" VerticalAlignment="Top" Width="394" Margin="372,0,0,-1" MouseEnter="gridRyuSide_MouseEnter">
-                <Label x:Name="lblSystemSave" Content="System Save" Foreground="Red" HorizontalAlignment="Left" Margin="315,326,0,0" VerticalAlignment="Top" MouseLeftButtonDown="lblSystemSave_MouseLeftButtonDown"/>
-                <Label x:Name="lblStoryMods" Content="Story" Foreground="Red" HorizontalAlignment="Left" Margin="121,199,0,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Consolas"/>
+                <Label x:Name="lblStorySave" Content="Story Save" Foreground="Red" HorizontalAlignment="Left" Margin="319,326,0,0" VerticalAlignment="Top" MouseLeftButtonDown="lblStorySave_MouseLeftButtonDown"/>
+                <Label x:Name="lblStoryMods" Content="Story" Foreground="Red" HorizontalAlignment="Left" Margin="121,199,0,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Consolas" MouseLeftButtonDown="lblStoryMods_MouseLeftButtonDown"/>
                 <Label x:Name="lblExit" Content="X" Foreground="Black" HorizontalAlignment="Left" Margin="372,-6,-3,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Consolas" MouseEnter="lblExit_MouseEnter" MouseLeave="lblExit_MouseLeave" MouseDown="lblExit_MouseDown"/>
                 <Label x:Name="lblMinimize" Content="_" Foreground="Black" HorizontalAlignment="Left" Margin="347,-19,0,0" VerticalAlignment="Top" FontSize="26.667" FontFamily="Consolas" MouseEnter="lblExit_MouseEnter" MouseLeave="lblExit_MouseLeave" RenderTransformOrigin="-1.121,0.489" MouseDown="lblMinimize_MouseDown"/>
             </Grid>
+            <!-- Ryu Hayabusa Side End -->
         </Grid>
+        <Border BorderBrush="Black" BorderThickness="5" Name="border"  HorizontalAlignment="Left" Height="361" VerticalAlignment="Top" Width="770" Margin="0,0,-1,0"/>
 
 
     </Grid>

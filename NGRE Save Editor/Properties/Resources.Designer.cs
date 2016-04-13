@@ -63,6 +63,56 @@ namespace NGRE_Save_Editor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap img_BOTA {
+            get {
+                object obj = ResourceManager.GetObject("img_BOTA", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_CLAWS {
+            get {
+                object obj = ResourceManager.GetObject("img_CLAWS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_DS {
+            get {
+                object obj = ResourceManager.GetObject("img_DS", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap img_KG {
+            get {
+                object obj = ResourceManager.GetObject("img_KG", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_SCYTHE {
+            get {
+                object obj = ResourceManager.GetObject("IMG_SCYTHE", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Main_Mod_Other_Selection {
             get {
                 object obj = ResourceManager.GetObject("Main_Mod_Other_Selection", resourceCulture);
@@ -77,6 +127,26 @@ namespace NGRE_Save_Editor.Properties {
             get {
                 object obj = ResourceManager.GetObject("Main_Mod_Story_Selection", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Misc_Mod_Background {
+            get {
+                object obj = ResourceManager.GetObject("Misc_Mod_Background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Sound_Ryu_Hurt {
+            get {
+                object obj = ResourceManager.GetObject("Sound_Ryu_Hurt", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }
